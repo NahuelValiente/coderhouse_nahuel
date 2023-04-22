@@ -1,0 +1,20 @@
+.container-aboutme {
+    background: rgb(0, 0, 0);
+    background-image: url(https://thumbs.dreamstime.com/b/seamless-furniture-background-vector-illustration-pattern-outlines-70898381.jpg);
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    padding: 150px;
+    min-height: 100vh;  
+  }
+  
+
+  .p-aboutme{
+    color: brown;
+    font-size: 20px;
+    font-weight: 900;
+    font-family:sans-serif;
+    border: 3px solid black;
+    border-radius:4%;
+    box-shadow: black;
+  }

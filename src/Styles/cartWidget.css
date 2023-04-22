@@ -1,0 +1,12 @@
+.cartContainer {
+  color: white;
+  background-color: #000;
+  border-radius: 15%;
+  padding: 10px;
+}
+
+.cartContainer:hover{
+  color: #000;
+  background-color: #fff;
+}
+
