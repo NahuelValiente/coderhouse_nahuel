@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import json from "../muebles.json"
+import json from "../Productos.json"
 import ItemCard from "./ItemCard";
 
 import "../Styles/card.css"

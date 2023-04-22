@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import json from "../muebles.json"
+import json from "../Productos.json"
 import ItemCard from './ItemCard';
 import "../Styles/card.css"
 
-const Bedroom = () => {
+const Living = () => {
     
     const [product, setProducts] = useState([]);
 
@@ -18,7 +18,7 @@ const Bedroom = () => {
     }, []);
 
 
-    const newObj = product.filter(product => product.search == "b");
+    const newObj = product.filter(product => product.search == "n");
     console.log(newObj)
   return (
     <div className="body-card">
@@ -36,4 +36,5 @@ const Bedroom = () => {
  
 };
 
-export default Bedroom;
+export default Living;
+

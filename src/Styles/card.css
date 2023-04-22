@@ -4,7 +4,7 @@
 .body-card {
   background: rgb(0,212,255);
   background: linear-gradient(45deg, rgba(0,212,255,1) 0%, rgba(11,3,45,1) 100%); 
-  background-image: url(https://thumbs.dreamstime.com/b/seamless-furniture-background-vector-illustration-pattern-outlines-70898381.jpg);
+  background-image: url(/Imagen/SABIO.png);
   display: flex;
   justify-content: center;    
   flex-wrap: wrap;
@@ -27,6 +27,7 @@
   text-align: center;
   width: 350px;
   height: 450px;
+  color: aliceblue;
   
 }
 

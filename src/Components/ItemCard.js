@@ -12,7 +12,7 @@ const ItemCard = ({ product }) => {
       </div>
       <div className="button-wrapper">
       <Link to={`/${product.id}`}>
-        <button className="btn outline">DETAILS</button>
+        <button >DETAILS</button>
         </Link>
       </div>
     </div>

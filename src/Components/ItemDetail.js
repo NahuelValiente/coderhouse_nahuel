@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import "../Styles/itemDetail.css"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import json from "../muebles.json"
+import json from "../Productos.json"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
