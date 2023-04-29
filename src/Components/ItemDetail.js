@@ -4,21 +4,35 @@ import { useContext } from 'react';
 import "../Styles/itemDetail.css"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import json from "../Productos.json"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { db } from "../firebase/firebase";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 
 
 const ItemDetail = () => {
-    const { id } = useParams();
-    const [product, setProducts] = useState([]);
-    const { productPurchase, setProductPurchase} = useContext(CartContext);
-  
+  const [product, setProducts] = useState([]);
+    const productsCollection = collection(db, "products");
+  // console.log("productsCollection", productsCollection);
 
-    const obtainObj = (id) =>{
-      setProducts(json)
-    }
+
+  const getProducts = async () => {
+    const dataProducts = await getDocs(productsCollection);
+    // console.log("dataProducts", dataProducts);
+    console.log("dataProducts.docs", dataProducts.docs);
+    setProducts(
+      dataProducts.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    );
+  };
+  console.log("products", product);
+
+  useEffect(() => {
+    getProducts( )
+  }, []);
+    const { id } = useParams();
+   
+    const { productPurchase, setProductPurchase} = useContext(CartContext);
+   
 
     const addProductToCart=(productX) =>{
     
@@ -30,14 +44,7 @@ const ItemDetail = () => {
      
   }
 
-
-    useEffect(() => {
-      obtainObj(id);
-
-    }, [id]);
-
     const newObj = product.filter(product => product.id == id);
-
    
   return (
     <>
@@ -45,8 +52,8 @@ const ItemDetail = () => {
       return(
    <div className="product-detail-container" key={index}>
       <div className="product-detail">
-      <h2>{product.name}</h2>
-      <img src={product.img}  />
+      <h2>{product.title}</h2>
+      <img src={product.image}  />
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
         <button className='button-detail' onClick={()=> addProductToCart(product)}>Add to Cart</button>

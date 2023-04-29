@@ -11,6 +11,8 @@ import { CartProvider } from "./Context/CartContext";
 import Checkout from "./Components/Checkout";
 import "./Styles/app.css"
 import Placa from "./Components/Placa";
+import CreateProduct from "./Components/CreateProduct";
+
 
 
 const App = () => {
@@ -29,6 +31,7 @@ const App = () => {
         <Route path="/procesador" element={   <Procesador/> }> </Route>
         <Route path="/aboutme" element={   <Aboutme/> }> </Route>
         <Route path="/checkout" element={   <Checkout/> }> </Route>
+        <Route path="/agregar_stock" element={   <CreateProduct/> }> </Route>
         <Route
           path="/:id"
           element={<ItemDetail  />}
